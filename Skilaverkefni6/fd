@@ -1,0 +1,27 @@
+def max_in(the_file, first_line, bla):
+    problems = ['Heart Disease Death Rate (2007)','Motor Vehicle Death Rate (2009)','Teen Birth Rate (2009)','Adult Smoking (2010)', 'Adult Obesity (2010)']
+    max_list = []
+    for problem in problems:
+        the_list = []
+        i = first_line.index(problem)
+        large = 0
+        g = 0
+        k = ''
+        m = bla[0].split(',')
+        while True:
+            try:
+                j = float(m[i].strip('%'))
+            except:
+                j = 0
+            if j > large:
+                    large = j
+                    k = m[0]
+            try:
+                m = bla[g].split(',')
+                g += 1
+            except:
+                break
+        the_list.append(k)
+        the_list.append(j)
+        max_list.append(the_list)
+    return max_list
